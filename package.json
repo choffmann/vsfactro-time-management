@@ -10,10 +10,31 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:vsfactro-time-management.helloWorld"
+        "onCommand:vsfactro-time-management.helloWorld",
+		"onView:vsfactro-sidebar"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+			  {
+				"id": "vsfactro-sidebar-view",
+				"title": "Factro Zeitmanagement",
+				"icon": "res/factro-icon.svg"
+			  }
+			]
+		  },
+		  "views": {
+			"vsfactro-sidebar-view": [
+			  {
+				"type": "webview",
+				"id": "vsfactro-sidebar",
+				"name": "Factro Zeitmanagement",
+				"icon": "res/factro-icon.svg",
+				"contextualTitle": "Factro Zeitmanagement"
+			  }
+			]
+		  },
 		"commands": [
 			{
 				"command": "vsfactro-time-management.helloWorld",
